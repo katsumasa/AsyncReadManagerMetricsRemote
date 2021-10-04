@@ -5,8 +5,8 @@
   "description": "This package allows you to use AsyncReadManagerMetrics from UnityEditor.",
   "unity": "2020.1", 
   "dependencies": {
-	"com.utj.editorguilayoutext":"https://github.com/katsumasa/EditorGUILayoutExt.git",
-	"com.utj.remoteconnect":"https://github.com/katsumasa/RemoteConnect.git"
+	"com.utj.editorguilayoutext":"https://github.com/katsumasa/EditorGUILayoutExt.git#dbe6167ac7cc2ac65d8722576cfc75db63f1feba",
+	"com.utj.remoteconnect":"https://github.com/katsumasa/RemoteConnect.git#e78934737cea336d48dfa726336e20c7d80a6e77"
  },
  "keywords": [
      "AsyncReadManagerMetrics"
