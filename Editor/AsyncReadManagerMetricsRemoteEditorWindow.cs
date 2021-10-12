@@ -96,12 +96,12 @@ namespace UTJ
                         var msg = new AsyncReadManagerMetricsRemoteMessageStop();
                         SendRemoteMessage(msg.ToBytes());
                     }
-                    EditorGUI.BeginDisabledGroup(mMetrics == null);
+                    UnityEditor.EditorGUI.BeginDisabledGroup(mMetrics == null);
                     if (GUILayout.Button("Save"))
                     {
                         SaveMetrics();
                     }
-                    EditorGUI.EndDisabledGroup();
+                    UnityEditor.EditorGUI.EndDisabledGroup();
                     UnityEditor.EditorGUILayout.EndHorizontal();
 
                     UnityEditor.EditorGUILayout.Space();
@@ -114,12 +114,12 @@ namespace UTJ
                         mSummaryMetrics.Clear();
                     }
 
-                    EditorGUI.BeginDisabledGroup(mSummaryMetrics.Count <= 0);
+                    UnityEditor.EditorGUI.BeginDisabledGroup(mSummaryMetrics.Count <= 0);
                     if (GUILayout.Button("Save"))
                     {
                         SaveMetrics();
                     }
-                    EditorGUI.EndDisabledGroup();
+                    UnityEditor.EditorGUI.EndDisabledGroup();
                     UnityEditor.EditorGUILayout.EndHorizontal();
 
 
@@ -153,7 +153,7 @@ namespace UTJ
                     }
                     mToggles[0] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.AverageBandwidthMBPerSecond,mToggles[0]);
                     if(mToggles[0])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(),protList,GUILayout.Width((int)EditorGUIUtility.currentViewWidth),GUILayout.Height(200));                        
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -164,7 +164,7 @@ namespace UTJ
                     }
                     mToggles[1] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.AverageReadSizeInBytes, mToggles[1]);
                     if (mToggles[1])
-                        UTJ.EditorGUILayoutExt.Graph(Styles.AverageReadSizeInBytes, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -175,7 +175,7 @@ namespace UTJ
                     }
                     mToggles[2] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.AverageReadTimeMicroseconds, mToggles[2]);
                     if (mToggles[2])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -187,7 +187,7 @@ namespace UTJ
                     }
                     mToggles[3] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.AverageThroughputMBPerSeconds, mToggles[3]);
                     if (mToggles[3])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -199,7 +199,7 @@ namespace UTJ
                     }
                     mToggles[4] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.AverageTotalRequestTimeMicroseconds, mToggles[4]);
                     if (mToggles[4])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -211,7 +211,7 @@ namespace UTJ
                     }
                     mToggles[5] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.AverageWaitTimeMicroseconds, mToggles[5]);
                     if (mToggles[5])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -223,7 +223,7 @@ namespace UTJ
                     }
                     mToggles[6] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.LongestReadTimeMicroseconds, mToggles[6]);
                     if (mToggles[6])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -235,7 +235,7 @@ namespace UTJ
                     }
                     mToggles[7] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.LongestWaitTimeMicroseconds, mToggles[7]);
                     if (mToggles[7])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -247,7 +247,7 @@ namespace UTJ
                     }
                     mToggles[8] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfAsyncReads, mToggles[8]);
                     if (mToggles[8])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -259,7 +259,7 @@ namespace UTJ
                     }
                     mToggles[9] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfCachedReads, mToggles[9]);
                     if (mToggles[9])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -270,7 +270,7 @@ namespace UTJ
                     }
                     mToggles[10] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfCanceledRequests, mToggles[10]);
                     if (mToggles[10])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -282,7 +282,7 @@ namespace UTJ
                     }
                     mToggles[11] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfCompletedRequests, mToggles[11]);
                     if (mToggles[11])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -294,7 +294,7 @@ namespace UTJ
                     }
                     mToggles[12] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfFailedRequests, mToggles[12]);
                     if (mToggles[12])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -306,7 +306,7 @@ namespace UTJ
                     }
                     mToggles[13] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfInProgressRequests, mToggles[13]);
                     if (mToggles[13])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -318,7 +318,7 @@ namespace UTJ
                     }
                     mToggles[14] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfSyncReads, mToggles[14]);
                     if (mToggles[14])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -330,7 +330,7 @@ namespace UTJ
                     }
                     mToggles[15] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.NumberOfWaitingRequests, mToggles[15]);
                     if (mToggles[15])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -341,7 +341,7 @@ namespace UTJ
                     }
                     mToggles[16] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.TotalBytesRead, mToggles[16]);
                     if (mToggles[16])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
@@ -353,7 +353,7 @@ namespace UTJ
                     }
                     mToggles[17] = UnityEditor.EditorGUILayout.ToggleLeft(Styles.TotalNumberOfRequests, mToggles[17]);
                     if (mToggles[17])
-                        UTJ.EditorGUILayoutExt.Graph(null, protList, Color.red, 100.0f);
+                        UTJ.EditorGUILayout.Graph(new GUIContent(), protList, GUILayout.Width((int)EditorGUIUtility.currentViewWidth), GUILayout.Height(200));
                     UnityEditor.EditorGUILayout.Space();
                     UnityEditor.EditorGUILayout.Space();
 
