@@ -8,7 +8,7 @@
 [AsyncReadManagerMetrics](https://docs.unity3d.com/ja/2020.3/ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.html)で得られる情報をUnityEditor上から取得するパッケージです。
 Unityの非同期読み込みに関する各種情報を計測し、グラフで表示することが可能です。計測したデータはCSV形式で出力することも可能です。
 
-![16cef9ca3ca755d318f282db406eb906](https://user-images.githubusercontent.com/29646672/135828887-cccb2a62-9540-4cf2-a361-2f109e327abb.gif)
+![c3347e5f22dffb8ca6cb4cd9768a47e6](https://user-images.githubusercontent.com/29646672/189852993-a7537b5b-28c2-468e-9667-233f695444dc.gif)
 
 
 ## 動作環境
