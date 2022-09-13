@@ -57,7 +57,7 @@ namespace UTJ
                 bool [] mToggles;
 
 
-                [MenuItem("Window/AsyncReadManagerMetricsRemote")]
+                [MenuItem("Window/UTJ/AsyncReadManagerMetricsRemote")]
                 static void OpenWindow()
                 {
                     var window = (AsyncReadManagerMetricsRemoteEditorWindow)EditorWindow.GetWindow(typeof(AsyncReadManagerMetricsRemoteEditorWindow));
@@ -362,7 +362,7 @@ namespace UTJ
 
 
                     UnityEditor.EditorGUILayout.Space();
-                    // Frame選択用スライダー
+                    // Frame選択用スライダ拏
                     mSlider = UnityEditor.EditorGUILayout.IntSlider(mSlider, 0, mSummaryMetrics.Count);
                 }
 
@@ -386,7 +386,7 @@ namespace UTJ
                                 mSummaryMetrics.Add(msg.summary);
 
                                 mSlider = mSummaryMetrics.Count;
-                                // 再描画
+                                // 敍描画
                                 Repaint();
                             }
                             break;
